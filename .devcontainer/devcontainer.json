@@ -1,0 +1,11 @@
+{
+  "name": "XFCE Desktop (noVNC)",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "onCreateCommand": "sudo apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends xfce4 xfce4-terminal dbus-x11 tigervnc-standalone-server tigervnc-tools novnc websockify fonts-dejavu-core",
+  "postStartCommand": "bash .devcontainer/start-desktop.sh",
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": { "label": "Desktop (noVNC)", "onAutoForward": "notify" }
+  },
+  "remoteUser": "vscode"
+}
